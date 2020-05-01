@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlllapotTer\Alllapot.cs" />
+    <Compile Include="AlllapotTer\Allapot.cs" />
     <Compile Include="AlllapotTer\Csomopont.cs" />
     <Compile Include="AlllapotTer\Operator.cs" />
     <Compile Include="Form1.cs">
