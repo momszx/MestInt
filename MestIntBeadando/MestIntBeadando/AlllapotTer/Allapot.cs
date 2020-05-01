@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MestIntBeadando.AlllapotTer
+﻿namespace MestIntBeadando.AlllapotTer
 {
     class Allapot
     {
@@ -43,7 +37,7 @@ namespace MestIntBeadando.AlllapotTer
         {
             for (int i = 0; i < feher; i++)
             {
-                if(poziciok[3, i] == "FehL")
+                if (poziciok[3, i] == "FehL")
                 {
                     return false;
                 }
@@ -76,7 +70,7 @@ namespace MestIntBeadando.AlllapotTer
                         return false;
                     }
                 }
-               
+
             }
             return true;
         }

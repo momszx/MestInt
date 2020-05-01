@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MestIntBeadando.AlllapotTer
 {
@@ -69,20 +65,18 @@ namespace MestIntBeadando.AlllapotTer
 
             foreach (String pozicio in allapot.Poziciok)
             {
-                if (pozicio==pozicio)
-                {
-                    suly += 3;
-                }
-                else if (korong == "Q")
-                {
-                    suly += 2;
-                }
-                else
-                {
-                    suly += 1;
-                }
+
+
             }
             return suly;
+        }
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+        public override string ToString()
+        {
+            return Allapot.ToString();
         }
     }
 
