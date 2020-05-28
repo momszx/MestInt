@@ -8,5 +8,6 @@ namespace MestIntBeadando.Keresok
 {
     class AgEsKorlat
     {
+
     }
 }

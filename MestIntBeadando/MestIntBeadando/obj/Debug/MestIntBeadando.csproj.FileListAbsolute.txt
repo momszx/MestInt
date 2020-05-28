@@ -1,0 +1,5 @@
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.csprojAssemblyReference.cache
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.Form1.resources
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.Properties.Resources.resources
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.csproj.GenerateResource.cache
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.csproj.CoreCompileInputs.cache

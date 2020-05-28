@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MestIntBeadando.AlllapotTer;
+using MestIntBeadando.Keresok;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,24 @@ namespace MestIntBeadando
 {
     public partial class Form1 : Form
     {
+        Graphics graphics;
+        List<Allapot> megoldas = new List<Allapot>();
+        int aktualisHely = 0;
+        List<Kereso> keresok = new List<Kereso>();
         public Form1()
         {
             InitializeComponent();
         }
+        private void picturebox1_paint(object sender,PaintEventArgs e)
+        {
+            Kirajzol();
+        }
+        private void Kirajzol()
+        {
+            Bitmap image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Image = image;
+            graphics = Graphics.FromImage(image);
+        }
     }
+    
 }

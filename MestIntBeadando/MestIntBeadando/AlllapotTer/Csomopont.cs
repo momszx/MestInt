@@ -37,7 +37,7 @@ namespace MestIntBeadando.AlllapotTer
             this.allapot = allap;
         }
 
-        private int heurisztika;
+        
 
         private int osszKoltseg;
 
@@ -54,22 +54,11 @@ namespace MestIntBeadando.AlllapotTer
             {
                 Koltseg = szulo.Koltseg + 1;
             }
-            this.heurisztika = heurisztikaSzamolas();
+            
 
             this.osszKoltseg = Koltseg + Heurisztika;
         }
-        private int heurisztikaSzamolas()
-        {
-            //P=3, Q=2, R=1
-            int suly = 1;
-
-            foreach (String pozicio in allapot.Poziciok)
-            {
-
-
-            }
-            return suly;
-        }
+        
         public override bool Equals(object obj)
         {
             return base.Equals(obj);

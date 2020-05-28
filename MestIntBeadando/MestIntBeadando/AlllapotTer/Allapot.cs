@@ -2,56 +2,57 @@
 {
     class Allapot
     {
-        public static int fekete = 3;
-        public static int feher = 3;
-        private string[,] poziciok = new string[3, 3];
+        public static int BABUSZAM = 6;
+        private Babu[] babuk = new Babu[BABUSZAM];
 
-
-        public string[,] Poziciok
+        public Babu[] Babuk
         {
             get
             {
-                return poziciok;
+                return babuk;
             }
             set
             {
-                poziciok = value;
+                babuk = value;
             }
         }
         public Allapot()
         {
-            for (int i = 0; i < feher; i++)
+            //fehér
+            for (int i = 0; i < babuk.Length/2; i++)
             {
-                poziciok[3, i] = "FehL";
+                for (int j = 1; j <babuk.Length/2; i++)
+                {
+                    babuk[i].X =j;
+                    babuk[i].Y =1;
+                    babuk[i].SzinFekete =false;
+                }
             }
-            for (int i = 0; i < feher; i++)
+            //fekete
+            for (int i = 3; i < babuk.Length; i++)
             {
-                poziciok[2, i] = "0";
-            }
-            for (int i = 0; i < fekete; i++)
-            {
-                poziciok[1, i] = "FekL";
+                for (int j = 1; j < babuk.Length / 2; i++)
+                {
+                    babuk[i].X = j;
+                    babuk[i].Y = 3;
+                    babuk[i].SzinFekete = true;
+                }
             }
         }
         public bool celAlllapot()
         {
-            for (int i = 0; i < feher; i++)
+            //fekete ellenörzés
+            for (int i = 3; i < babuk.Length; i++)
             {
-                if (poziciok[3, i] == "FehL")
+                if (babuk[i].SzinFekete == false && babuk[i].Y==1)
                 {
                     return false;
                 }
             }
-            for (int i = 0; i < fekete; i++)
+            //fehér ellenörzés
+            for (int i = 0; i < babuk.Length/2; i++)
             {
-                if (poziciok[1, i] == "FekL")
-                {
-                    return false;
-                }
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                if (poziciok[2, i] == "0")
+                if (babuk[i].SzinFekete == true && babuk[i].Y==3)
                 {
                     return false;
                 }
@@ -61,16 +62,12 @@
         public override bool Equals(object obj)
         {
             Allapot masikallapot = (Allapot)obj;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < babuk.Length; i++)
             {
-                for (int j = 0; j < 3; j++)
+                if (babuk[i] != masikallapot.babuk[i])
                 {
-                    if (poziciok[j, i] != masikallapot.Poziciok[j, i])
-                    {
-                        return false;
-                    }
+                    return false;
                 }
-
             }
             return true;
         }
