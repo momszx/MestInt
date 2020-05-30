@@ -18,28 +18,25 @@
         }
         public Allapot()
         {
+            Babu babu = new Babu();
             //fehér
-            for (int i = 0; i < babuk.Length/2; i++)
+            for (int i = 0; i < babuk.Length / 2; i++)
             {
-                for (int j = 1; j <babuk.Length/2; i++)
-                {
-                    babuk[i].X =j;
-                    babuk[i].Y =1;
-                    babuk[i].SzinFekete =false;
-                }
+                babu.X = i + 1;
+                babu.Y = 1;
+                babu.SzinFekete = false;
+                Babuk[i] = babu;
             }
             //fekete
             for (int i = 3; i < babuk.Length; i++)
             {
-                for (int j = 1; j < babuk.Length / 2; i++)
-                {
-                    babuk[i].X = j;
-                    babuk[i].Y = 3;
-                    babuk[i].SzinFekete = true;
-                }
+                babu.X = i - 2;
+                babu.Y = 3;
+                babu.SzinFekete = true;
+                Babuk[i] = babu;
             }
         }
-        public bool celAlllapot()
+        public bool celFeltetel()
         {
             //fekete ellenörzés
             for (int i = 3; i < babuk.Length; i++)

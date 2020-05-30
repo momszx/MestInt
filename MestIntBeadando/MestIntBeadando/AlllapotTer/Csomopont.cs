@@ -28,7 +28,6 @@ namespace MestIntBeadando.AlllapotTer
         private int koltseg;
 
         public int Koltseg { get => koltseg; set => koltseg = value; }
-        public int Heurisztika { get => heurisztika; set => heurisztika = value; }
         public int OsszKoltseg { get => osszKoltseg; set => osszKoltseg = value; }
 
         public Csomopont(Allapot allap, int index)
@@ -56,7 +55,7 @@ namespace MestIntBeadando.AlllapotTer
             }
             
 
-            this.osszKoltseg = Koltseg + Heurisztika;
+            this.osszKoltseg = Koltseg;
         }
         
         public override bool Equals(object obj)

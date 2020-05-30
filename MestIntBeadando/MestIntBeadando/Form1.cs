@@ -21,6 +21,13 @@ namespace MestIntBeadando
         public Form1()
         {
             InitializeComponent();
+            keresok.Add(new AgEsKorlat());
+            foreach(Kereso kereso in keresok)
+            {
+                comboBox1.Items.Add(kereso.GetType().Name);
+            }
+            megoldas = keresok[0].Utvonal;
+            this.comboBox1.SelectedIndex = 0;
         }
         private void picturebox1_paint(object sender,PaintEventArgs e)
         {
