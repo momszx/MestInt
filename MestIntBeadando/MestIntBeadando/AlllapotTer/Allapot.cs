@@ -18,10 +18,11 @@
         }
         public Allapot()
         {
-            Babu babu = new Babu();
+            
             //fehér
             for (int i = 0; i < babuk.Length / 2; i++)
             {
+                Babu babu = new Babu();
                 babu.X = i + 1;
                 babu.Y = 1;
                 babu.SzinFekete = false;
@@ -30,6 +31,7 @@
             //fekete
             for (int i = 3; i < babuk.Length; i++)
             {
+                Babu babu = new Babu();
                 babu.X = i - 2;
                 babu.Y = 3;
                 babu.SzinFekete = true;

@@ -25,7 +25,7 @@ namespace MestIntBeadando
             foreach(Kereso kereso in keresok)
             {
                 comboBox1.Items.Add(kereso.GetType().Name);
-            }
+            }//üres a megoldás és e miatt null lesz a megoldás tömb
             megoldas = keresok[0].Utvonal;
             this.comboBox1.SelectedIndex = 0;
             Kirajzol();
@@ -39,14 +39,53 @@ namespace MestIntBeadando
             Bitmap image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = image;
             graphics = Graphics.FromImage(image);
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    graphics.FillRectangle(new SolidBrush(Color.Gray), new Rectangle(i* 30/*X*/,j*30/*Y*/, 30,30));
-                    //graphics.FillRectangle(new SolidBrush(Color.Gray), new Rectangle(i * 150 + 60, 60, 20, 150));
+                    graphics.FillRectangle(new SolidBrush(Color.Gray), new Rectangle(i* 100+10/*X*/,j*100+10/*Y*/, 80,80));
                 }
             }
+            Babu[] babuk = megoldas[aktualisHely].Babuk;
+            int x;
+            int y;
+            bool fekete;
+            for (int i = 0; i < babuk.Length; i++)
+            {
+                x = babuk[i].X;
+                y = babuk[i].X;
+                fekete = babuk[i].SzinFekete;
+                if (fekete)
+                {
+                    graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(x * 45/*X*/, y * 45 /*Y*/, 50, 50));
+                }
+                else
+                {
+                    graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(x * 45/*X*/, y * 45 /*Y*/, 50, 50));
+                }
+            }
+            //string[] korongok = megoldas[aktualisHely];
+
+            //for (int i = 0; i < korongok.Length; i++)
+            //{
+            //    int oszlopSzam = 0;
+            //    if (korongok[i] == "Q")
+            //    {
+            //        oszlopSzam = 1;
+            //    }
+            //    else if (korongok[i] == "R")
+            //    {
+            //        oszlopSzam = 2;
+            //    }
+
+            //    int pozicio = 0;
+            //    for (int j = i + 1; j < korongok.Length; j++)
+            //    {
+            //        if (korongok[j] == korongok[i]) pozicio++;
+            //    }
+
+            //    graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(40 + oszlopSzam * 150 - i * 15, 180 - pozicio * 30, 60 + i * 30, 30));
+            //}
             label1.Text = "Lépések (Kezdő állapottal együtt): " + megoldas.Count();
             pictureBox1.Refresh();
         }

@@ -39,7 +39,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(786, 22);
+            this.comboBox1.Location = new System.Drawing.Point(351, 17);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(140, 21);
@@ -47,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(786, 60);
+            this.button1.Location = new System.Drawing.Point(351, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 41);
             this.button1.TabIndex = 6;
@@ -57,7 +57,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(789, 127);
+            this.button2.Location = new System.Drawing.Point(354, 122);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 41);
             this.button2.TabIndex = 7;
@@ -68,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(840, 191);
+            this.label1.Location = new System.Drawing.Point(28, 318);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 8;
@@ -78,7 +78,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(749, 556);
+            this.pictureBox1.Size = new System.Drawing.Size(324, 288);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 635);
+            this.ClientSize = new System.Drawing.Size(522, 351);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
