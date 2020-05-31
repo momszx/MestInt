@@ -6,3 +6,4 @@ D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.Propert
 D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.csproj.GenerateResource.cache
 D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.exe
 D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.pdb
+D:\Git\MestInt\MestIntBeadando\MestIntBeadando\obj\Debug\MestIntBeadando.csprojAssemblyReference.cache
