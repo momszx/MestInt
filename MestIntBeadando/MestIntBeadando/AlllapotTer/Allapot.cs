@@ -4,6 +4,7 @@
     {
         public static int BABUSZAM = 6;
         private Babu[] babuk = new Babu[BABUSZAM];
+        public static Babu[] poziciok = new Babu[] { };
 
         public Babu[] Babuk
         {

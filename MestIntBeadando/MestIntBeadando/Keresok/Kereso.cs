@@ -31,10 +31,10 @@ namespace MestIntBeadando.Keresok
             Babu babu =new Babu();
             for (int i = 0; i < Allapot.BABUSZAM; i++)
             {
-                for (int j = 1; j < 3; j++)
+                for (int j = 1; j < 4; j++)
                 {
                     babu.X = j;
-                    for (int k = 1; k < 3; k++)
+                    for (int k = 1; k < 4; k++)
                     {
                         babu.Y = k;
                         operatorok.Add(new Operator(i, babu));

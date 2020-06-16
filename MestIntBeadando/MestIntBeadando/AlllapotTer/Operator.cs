@@ -27,7 +27,7 @@ namespace MestIntBeadando.AlllapotTer
             Console.WriteLine(hova.X+"=X");
             Console.WriteLine(hova.Y + "=Y");
 
-            //mindegyik hez le van generálva hova kerülhet
+            //Az a hiba hogy mindig felül írja és az utolsó lesz a 3x 3y
         }
         public Allapot Mozgatas(Allapot allapot)
         {
