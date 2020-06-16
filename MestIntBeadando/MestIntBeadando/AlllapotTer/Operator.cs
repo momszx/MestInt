@@ -24,7 +24,9 @@ namespace MestIntBeadando.AlllapotTer
         {
             this.melyiket = melyiket;
             this.hova = hova;
-            
+            Console.WriteLine(hova.X+"=X");
+            Console.WriteLine(hova.Y + "=Y");
+
             //mindegyik hez le van generálva hova kerülhet
         }
         public Allapot Mozgatas(Allapot allapot)
