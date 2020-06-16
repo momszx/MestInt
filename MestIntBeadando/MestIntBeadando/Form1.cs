@@ -53,15 +53,15 @@ namespace MestIntBeadando
             for (int i = 0; i < babuk.Length; i++)
             {
                 x = babuk[i].X;
-                y = babuk[i].X;
+                y = babuk[i].Y;
                 fekete = babuk[i].SzinFekete;
                 if (fekete)
                 {
-                    graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(x * 45/*X*/, y * 45 /*Y*/, 50, 50));
+                    graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(x * 100 - 75/*X*/, y * 100 - 75 /*Y*/, 50, 50));
                 }
                 else
                 {
-                    graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(x * 45/*X*/, y * 45 /*Y*/, 50, 50));
+                    graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(x * 100-75/*X*/, y * 100 - 75 /*Y*/, 50, 50));
                 }
             }
             //string[] korongok = megoldas[aktualisHely];
