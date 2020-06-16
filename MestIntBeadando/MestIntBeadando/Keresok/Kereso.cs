@@ -36,7 +36,7 @@ namespace MestIntBeadando.Keresok
                     babu.X = j;
                     for (int k = 1; k < 4; k++)
                     {
-                        //melyiket hova
+                        
                         babu.Y = k;
                         operatorok.Add(new Operator(i, babu));
                     }

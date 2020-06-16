@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace MestIntBeadando
         {
             InitializeComponent();
             keresok.Add(new AgEsKorlat());
+            keresok.Add(new BackTrack());
+            keresok.Add(new HibaProbaRandom());
             foreach(Kereso kereso in keresok)
             {
                 comboBox1.Items.Add(kereso.GetType().Name);
@@ -39,6 +42,7 @@ namespace MestIntBeadando
             Bitmap image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = image;
             graphics = Graphics.FromImage(image);
+            //tábla kiralyzolása
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -50,6 +54,7 @@ namespace MestIntBeadando
             int x;
             int y;
             bool fekete;
+            //Babuk felrajzolása a táblára
             for (int i = 0; i < babuk.Length; i++)
             {
                 x = babuk[i].X;
@@ -64,28 +69,6 @@ namespace MestIntBeadando
                     graphics.FillRectangle(new SolidBrush(Color.White), new Rectangle(x * 100-75/*X*/, y * 100 - 75 /*Y*/, 50, 50));
                 }
             }
-            //string[] korongok = megoldas[aktualisHely];
-
-            //for (int i = 0; i < korongok.Length; i++)
-            //{
-            //    int oszlopSzam = 0;
-            //    if (korongok[i] == "Q")
-            //    {
-            //        oszlopSzam = 1;
-            //    }
-            //    else if (korongok[i] == "R")
-            //    {
-            //        oszlopSzam = 2;
-            //    }
-
-            //    int pozicio = 0;
-            //    for (int j = i + 1; j < korongok.Length; j++)
-            //    {
-            //        if (korongok[j] == korongok[i]) pozicio++;
-            //    }
-
-            //    graphics.FillRectangle(new SolidBrush(Color.Black), new Rectangle(40 + oszlopSzam * 150 - i * 15, 180 - pozicio * 30, 60 + i * 30, 30));
-            //}
             label1.Text = "Lépések (Kezdő állapottal együtt): " + megoldas.Count();
             pictureBox1.Refresh();
         }
