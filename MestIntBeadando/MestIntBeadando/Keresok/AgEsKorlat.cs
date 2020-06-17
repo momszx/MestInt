@@ -51,6 +51,11 @@ namespace MestIntBeadando.Keresok
                         //Console.WriteLine(Utvonal.Count);
                         //Console.WriteLine(ut.Contains(ujCsomopont));
                         //Console.WriteLine(Utvonal.Count == 0);
+                        bool bool1 = !(ut.Contains(ujCsomopont));
+                        bool bool2 = Utvonal.Count == 0;
+                        bool bool3 = (ut.Count < Utvonal.Count);
+                        
+                        Console.WriteLine(bool1+" és "+"("+ bool2+"vagy" + bool3  + ")");
                         if (!ut.Contains(ujCsomopont) && (Utvonal.Count == 0 || ut.Count < Utvonal.Count))
                         {
                             ut.Push(ujCsomopont);
@@ -66,10 +71,10 @@ namespace MestIntBeadando.Keresok
                 }
                 if(ut.Count>0&& ut.Peek().Allapot.celFeltetel())
                 {
-                    Console.WriteLine("1.if");
+                    //Console.WriteLine("1.if");
                     if(Utvonal.Count==0|| ut.Count < Utvonal.Count)
                     {
-                        Console.WriteLine("2.if");
+                        //Console.WriteLine("2.if");
                         Utvonal.Clear();
                         for (int i = 0; i < ut.Count; i++)
                         {

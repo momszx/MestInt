@@ -79,7 +79,7 @@ namespace MestIntBeadando.AlllapotTer
             //Console.WriteLine("|x=" + allapot.Babuk[melyiket].X + "->" + hova.X + "=" + (allapot.Babuk[melyiket].X - hova.X) + "  Y=" + allapot.Babuk[melyiket].Y + "->" + hova.Y + "=" + (allapot.Babuk[melyiket].Y - hova.Y) + "|");
             //Console.WriteLine("----------------");
             //Console.WriteLine("!!!!!!Igazt adott vissza ");
-            
+            Console.WriteLine("igaz lett");
             return true;
         }
         private bool LAlak1(Allapot allapot)
