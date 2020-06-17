@@ -42,6 +42,7 @@ namespace MestIntBeadando
             Bitmap image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = image;
             graphics = Graphics.FromImage(image);
+            graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0 /*X*/, 0 /*Y*/, 400, 5));
             //tábla kiralyzolása
             for (int i = 0; i < 3; i++)
             {
@@ -75,19 +76,30 @@ namespace MestIntBeadando
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("-");
             if (aktualisHely > 0)
             {
                 aktualisHely--;
+                
             }
             Kirajzol();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("+");
             if (aktualisHely + 1 < megoldas.Count)
             {
                 aktualisHely++;
+                
             }
+            Kirajzol();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            megoldas = keresok[comboBox1.SelectedIndex].Utvonal;
+            aktualisHely = 0;
             Kirajzol();
         }
     }

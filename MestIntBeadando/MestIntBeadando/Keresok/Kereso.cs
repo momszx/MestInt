@@ -28,16 +28,19 @@ namespace MestIntBeadando.Keresok
         }
         private void operatorokGenaralasa()
         {
-            Babu babu =new Babu();
+            
             for (int i = 0; i < Allapot.BABUSZAM; i++)
             {
                 for (int j = 1; j < 4; j++)
                 {
-                    babu.X = j;
+                    
                     for (int k = 1; k < 4; k++)
                     {
+                        Babu babu = new Babu();
                         babu.Y = k;
-                        operatorok.Add(new Operator(i, babu));
+                        babu.X = j;
+                        Operator operators = new Operator(i, babu);
+                        operatorok.Add(operators);
                     }
                 }
             }

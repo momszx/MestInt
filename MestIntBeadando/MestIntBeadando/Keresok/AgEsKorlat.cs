@@ -41,13 +41,17 @@ namespace MestIntBeadando.Keresok
                     //}
 
 
-                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot)){//2 ide nem lép be elötte van a hiba
+                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot)){
 
 
-                        Console.WriteLine("if 2");
+                        //Console.WriteLine("if 2");
                         Allapot ujAllapot = aktualisOperator.Mozgatas(aktualisCsomopont.Allapot);
                         Csomopont ujCsomopont = new Csomopont(ujAllapot, 0);
-                        if(!ut.Contains(ujCsomopont)&&(Utvonal.Count==0 || ut.Count < Utvonal.Count))
+                        //Console.WriteLine(ut.Count);
+                        //Console.WriteLine(Utvonal.Count);
+                        //Console.WriteLine(ut.Contains(ujCsomopont));
+                        //Console.WriteLine(Utvonal.Count == 0);
+                        if (!ut.Contains(ujCsomopont) && (Utvonal.Count == 0 || ut.Count < Utvonal.Count))
                         {
                             ut.Push(ujCsomopont);
                             Console.WriteLine("Pusholtam az uj csomopontot");
@@ -62,12 +66,15 @@ namespace MestIntBeadando.Keresok
                 }
                 if(ut.Count>0&& ut.Peek().Allapot.celFeltetel())
                 {
+                    Console.WriteLine("1.if");
                     if(Utvonal.Count==0|| ut.Count < Utvonal.Count)
                     {
+                        Console.WriteLine("2.if");
                         Utvonal.Clear();
                         for (int i = 0; i < ut.Count; i++)
                         {
                             Utvonal.Add(ut.ElementAt(i).Allapot);
+                            Console.WriteLine("hozzá adtam egy útvonalat");
                         }
                         Utvonal.Reverse();
                     }
