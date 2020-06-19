@@ -35,6 +35,7 @@ namespace MestIntBeadando.Keresok
                    
                     if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot)){
                         //this.elötteMozgatottSzine = aktualisOperator.;
+                        // itt valamiért felül lesz írva az aktuális csomopont szerintem memória címzési hiba 
                         Allapot ujAllapot = aktualisOperator.Mozgatas(aktualisCsomopont.Allapot);
                         Csomopont ujCsomopont = new Csomopont(ujAllapot, 0);
                         //!ut.Contains(ujCsomopont) valamiért false lesz és a utvonal .count nem nő
