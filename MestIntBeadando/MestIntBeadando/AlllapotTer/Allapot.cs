@@ -1,4 +1,6 @@
-﻿namespace MestIntBeadando.AlllapotTer
+﻿using System.Text;
+
+namespace MestIntBeadando.AlllapotTer
 {
     class Allapot
     {
@@ -41,23 +43,58 @@
         }
         public bool celFeltetel()
         {
-            //fekete ellenörzés
-            for (int i = 3; i < babuk.Length; i++)
+            bool feherjo = false;
+            bool feketejo = false;
+            for (int i = 0; i < babuk.Length; i++)
             {
-                if (babuk[i].SzinFekete == false && babuk[i].Y==1)
+                if (babuk[i].SzinFekete)
                 {
-                    return false;
+                    if (babuk[i].Y==1)
+                    {
+                        feketejo = true;
+                    }
+                    else
+                    {
+                        feketejo = false;
+                    }
                 }
+                if (!babuk[i].SzinFekete)
+                {
+                    if (babuk[i].Y==3)
+                    {
+                        feherjo = true;
+                    }
+                    else
+                    {
+                        feherjo = false;
+                    }
+                } 
             }
-            //fehér ellenörzés
-            for (int i = 0; i < babuk.Length/2; i++)
+            if (feherjo && feketejo)
             {
-                if (babuk[i].SzinFekete == true && babuk[i].Y==3)
-                {
-                    return false;
-                }
+                return true;
             }
-            return true;
+            else
+            {
+                return false;
+            }
+            ////fekete ellenörzés
+            //for (int i = 3; i < babuk.Length; i++)
+            //{
+            //    if (babuk[i].SzinFekete == true && babuk[i].Y==1)
+            //    {
+            //        return false;
+            //    }
+            //}
+            ////fehér ellenörzés
+            //for (int i = 0; i < babuk.Length/2; i++)
+            //{
+            //    if (babuk[i].SzinFekete == false && babuk[i].Y==3)
+            //    {
+            //        return false;
+            //    }
+            //}
+            //return true;
         }
         public override bool Equals(object obj)
         {
@@ -70,6 +107,28 @@
                 }
             }
             return true;
+        }
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("(");
+            for (int i = 0; i < BABUSZAM; i++)
+            {
+                builder.Append("Y=");
+                builder.Append(babuk[i].X);
+                builder.Append(",Y=");
+                builder.Append(babuk[i].Y);
+                if (babuk[i].SzinFekete)
+                {
+                    builder.Append(",Fekete");
+                }
+                else
+                {
+                    builder.Append(",Fehér");
+                }
+                builder.Append("    ");
+            }
+            return base.ToString();
         }
     }
 }

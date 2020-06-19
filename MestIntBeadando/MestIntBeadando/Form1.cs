@@ -29,7 +29,7 @@ namespace MestIntBeadando
             {
                 comboBox1.Items.Add(kereso.GetType().Name);
             }//üres a megoldás és e miatt null lesz a megoldás tömb
-            megoldas = keresok[0].Utvonal;
+            megoldas = keresok[1].Utvonal;
             this.comboBox1.SelectedIndex = 0;
             Kirajzol();
         }

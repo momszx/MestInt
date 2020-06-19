@@ -18,59 +18,52 @@ namespace MestIntBeadando.Keresok
             Stack<Csomopont> ut = new Stack<Csomopont>();
             Csomopont kezdoAllapot = new Csomopont(new Allapot(), 0);
             ut.Push(kezdoAllapot);
-            //Console.WriteLine(ut.Count);
+            int d = 0;
             while (ut.Count > 0)
             {
-                //Console.WriteLine(ut.Count);
+               
                 Csomopont aktualisCsomopont = ut.Peek();
-
-                //Console.WriteLine(this.operatorok.Count +">"+ aktualisCsomopont.Index);
-
-                if(this.operatorok.Count>aktualisCsomopont.Index){
-                    //Console.WriteLine("if 1");
-
-
+                //55 ször fut le
+                d++;
+                if (this.operatorok.Count>aktualisCsomopont.Index){
+                    //54 szer fur fut le
+                    //Eddig jónak tűnik mert az operatorok száma  54 (6*9) és úgy kezdi össze hasonlítani 
+                    //Fura sokkal kevesebbszer futt le a cw mint az órai kódban 
+                    
                     Operator aktualisOperator = operatorok[aktualisCsomopont.Index];
-
-                    //for (int i = 0; i < 6; i++)
-                    //{
-                    //    Console.WriteLine(aktualisCsomopont.Allapot.Babuk[i].X);
-                    //    Console.WriteLine(aktualisCsomopont.Allapot.Babuk[i].Y);
-                    //    Console.WriteLine(aktualisCsomopont.Index);
-                    //    Console.WriteLine(" ");
-                    //}
-
-
+                    
+                   
                     if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot)){
-
-
-                        //Console.WriteLine("if 2");
+                        //this.elötteMozgatottSzine = aktualisOperator.;
                         Allapot ujAllapot = aktualisOperator.Mozgatas(aktualisCsomopont.Allapot);
                         Csomopont ujCsomopont = new Csomopont(ujAllapot, 0);
-                        //Console.WriteLine(ut.Count);
-                        //Console.WriteLine(Utvonal.Count);
-                        //Console.WriteLine(ut.Contains(ujCsomopont));
-                        //Console.WriteLine(Utvonal.Count == 0);
-                        bool bool1 = !(ut.Contains(ujCsomopont));
-                        bool bool2 = Utvonal.Count == 0;
-                        bool bool3 = (ut.Count < Utvonal.Count);
-                        
-                        Console.WriteLine(bool1+" és "+"("+ bool2+"vagy" + bool3  + ")");
+                        //!ut.Contains(ujCsomopont) valamiért false lesz és a utvonal .count nem nő
                         if (!ut.Contains(ujCsomopont) && (Utvonal.Count == 0 || ut.Count < Utvonal.Count))
                         {
+                            //miért nem pushol elemet bele soha ?
                             ut.Push(ujCsomopont);
-                            Console.WriteLine("Pusholtam az uj csomopontot");
+                        Console.WriteLine("Pusholtam az uj csomopontot");
                         }
+                        else
+                        {
+                        Console.WriteLine("NEM Pusholtam ");
+                        }  
+                    }
+                    else
+                    {
+                        Console.WriteLine( "elbuktam az előfeltételt");
                     }
                     aktualisCsomopont.Index++;
                 }
                 else
                 {
                     Csomopont torol = ut.Pop();
-                    //Console.WriteLine(torol+" töröltem"); 
+                    
                 }
+                //megvizsgálom az a célfeltétel ahol vagyok
                 if(ut.Count>0&& ut.Peek().Allapot.celFeltetel())
                 {
+                    //megvizsgálom hogy rividebbet találtam e 
                     //Console.WriteLine("1.if");
                     if(Utvonal.Count==0|| ut.Count < Utvonal.Count)
                     {
@@ -85,6 +78,7 @@ namespace MestIntBeadando.Keresok
                     }
                 }
             }
+            Console.WriteLine( d);
         }
     }
 }

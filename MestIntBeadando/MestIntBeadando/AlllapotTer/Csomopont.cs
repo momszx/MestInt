@@ -60,7 +60,8 @@ namespace MestIntBeadando.AlllapotTer
         
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            Csomopont masikCsomopont = (Csomopont)obj;
+            return Allapot.Equals(masikCsomopont.Allapot);
         }
         public override string ToString()
         {

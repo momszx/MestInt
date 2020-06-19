@@ -22,6 +22,7 @@ namespace MestIntBeadando.Keresok
             }
         }
         protected List<Operator> operatorok = new List<Operator>();
+        public bool elötteMozgatottSzine;
         public Kereso()
         {
             operatorokGenaralasa();
