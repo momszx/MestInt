@@ -57,7 +57,6 @@
     </Compile>
     <Compile Include="Keresok\AgEsKorlat.cs" />
     <Compile Include="Keresok\BackTrack.cs" />
-    <Compile Include="Keresok\HibaProbaRandom.cs" />
     <Compile Include="Keresok\Kereso.cs" />
     <Compile Include="Babu.cs" />
     <Compile Include="Program.cs" />

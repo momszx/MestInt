@@ -30,20 +30,22 @@ namespace MestIntBeadando.AlllapotTer
             Allapot ujallapot = new Allapot();
             for (int i = 0; i < Allapot.BABUSZAM; i++)
             {
-                ujallapot.Babuk[i] = allapot.Babuk[i];
+                ujallapot.Babuk[i].X = allapot.Babuk[i].X;
+                ujallapot.Babuk[i].Y = allapot.Babuk[i].Y;
+                ujallapot.Babuk[i].SzinFekete = allapot.Babuk[i].SzinFekete;
             }
             ujallapot.Babuk[melyiket].X = hova.X;
             ujallapot.Babuk[melyiket].Y = hova.Y;
             return ujallapot;
 
         }
-        public bool Elofeltetel(Allapot allapot)
+        public bool Elofeltetel(Allapot allapot,bool feketeLepet)
         {
-        //    bool elötteMozgatottSzine = false;
-        //    if (allapot.Babuk[melyiket].SzinFekete==elötteMozgatottSzine)
-        //    {
-        //        return false;
-        //    }
+            
+            if (allapot.Babuk[melyiket].SzinFekete == feketeLepet)
+            {
+                return false;
+            }
             // Megviszgálom nem e ugyan oda tenném a bábut 
             if (allapot.Babuk[melyiket].X == hova.X && allapot.Babuk[melyiket].Y == hova.Y)
             {
@@ -64,10 +66,7 @@ namespace MestIntBeadando.AlllapotTer
                 return false;
             }
 
-            Console.WriteLine("----------------");
-            Console.WriteLine("|"+allapot.Babuk[melyiket].SzinFekete+"|");
-            Console.WriteLine("|x=" + allapot.Babuk[melyiket].X + "->" + hova.X + "=" + (allapot.Babuk[melyiket].X - hova.X) + "  Y=" + allapot.Babuk[melyiket].Y + "->" + hova.Y + "=" + (allapot.Babuk[melyiket].Y - hova.Y) + "|");
-            Console.WriteLine("----------------");
+            Console.WriteLine(allapot.Babuk[melyiket].X + "->" + hova.X + "  Y=" + allapot.Babuk[melyiket].Y + "->" + hova.Y);
             //Console.WriteLine("!!!!!!Igazt adott vissza ");
             //Console.WriteLine("igaz lett");
             return true;

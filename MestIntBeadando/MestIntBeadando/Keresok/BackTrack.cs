@@ -19,6 +19,7 @@ namespace MestIntBeadando.Keresok
             Stack<Csomopont> ut = new Stack<Csomopont>();
             Csomopont kezdoAllapot = new Csomopont(new Allapot(), 0);
             ut.Push(kezdoAllapot);
+            bool feketeLepet = true;
 
             while (ut.Count > 0 && !ut.Peek().Allapot.celFeltetel())
             {
@@ -27,8 +28,9 @@ namespace MestIntBeadando.Keresok
                 {
                     Operator aktualisOperator = operatorok[aktualisCsomopont.Index];
 
-                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot))
+                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot, feketeLepet))
                     {
+                        feketeLepet = aktualisCsomopont.Allapot.Babuk[operatorok[aktualisCsomopont.Index].Melyiket].SzinFekete;
                         Allapot ujAllapot = aktualisOperator.Mozgatas(aktualisCsomopont.Allapot);
                         Csomopont ujCsomopont = new Csomopont(ujAllapot, 0);
                         if (!ut.Contains(ujCsomopont))

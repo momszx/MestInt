@@ -18,13 +18,12 @@ namespace MestIntBeadando.Keresok
             Stack<Csomopont> ut = new Stack<Csomopont>();
             Csomopont kezdoAllapot = new Csomopont(new Allapot(), 0);
             ut.Push(kezdoAllapot);
-            int d = 0;
+            bool feketeLepet = true;
             while (ut.Count > 0)
             {
                
                 Csomopont aktualisCsomopont = ut.Peek();
                 //55 ször fut le
-                d++;
                 if (this.operatorok.Count>aktualisCsomopont.Index){
                     //54 szer fur fut le
                     //Eddig jónak tűnik mert az operatorok száma  54 (6*9) és úgy kezdi össze hasonlítani 
@@ -33,7 +32,9 @@ namespace MestIntBeadando.Keresok
                     Operator aktualisOperator = operatorok[aktualisCsomopont.Index];
                     
                    
-                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot)){
+                    if (aktualisOperator.Elofeltetel(aktualisCsomopont.Allapot, feketeLepet)){
+                        feketeLepet = aktualisCsomopont.Allapot.Babuk[operatorok[aktualisCsomopont.Index].Melyiket].SzinFekete;
+                            //operatorok[aktualisCsomopont.Index].
                         //this.elötteMozgatottSzine = aktualisOperator.;
                         // itt valamiért felül lesz írva az aktuális csomopont szerintem memória címzési hiba 
                         Allapot ujAllapot = aktualisOperator.Mozgatas(aktualisCsomopont.Allapot);
@@ -50,10 +51,10 @@ namespace MestIntBeadando.Keresok
                         Console.WriteLine("NEM Pusholtam ");
                         }  
                     }
-                    else
-                    {
-                        Console.WriteLine( "elbuktam az előfeltételt");
-                    }
+                    //else
+                    //{
+                    //    Console.WriteLine( "elbuktam az előfeltételt");
+                    //}
                     aktualisCsomopont.Index++;
                 }
                 else
@@ -64,6 +65,7 @@ namespace MestIntBeadando.Keresok
                 //megvizsgálom az a célfeltétel ahol vagyok
                 if(ut.Count>0&& ut.Peek().Allapot.celFeltetel())
                 {
+                    Console.WriteLine("");
                     //megvizsgálom hogy rividebbet találtam e 
                     //Console.WriteLine("1.if");
                     if(Utvonal.Count==0|| ut.Count < Utvonal.Count)
@@ -79,7 +81,6 @@ namespace MestIntBeadando.Keresok
                     }
                 }
             }
-            Console.WriteLine( d);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace MestIntBeadando
             InitializeComponent();
             keresok.Add(new AgEsKorlat());
             keresok.Add(new BackTrack());
-            keresok.Add(new HibaProbaRandom());
+            
             foreach(Kereso kereso in keresok)
             {
                 comboBox1.Items.Add(kereso.GetType().Name);

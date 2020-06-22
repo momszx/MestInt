@@ -78,23 +78,7 @@ namespace MestIntBeadando.AlllapotTer
             {
                 return false;
             }
-            ////fekete ellenörzés
-            //for (int i = 3; i < babuk.Length; i++)
-            //{
-            //    if (babuk[i].SzinFekete == true && babuk[i].Y==1)
-            //    {
-            //        return false;
-            //    }
-            //}
-            ////fehér ellenörzés
-            //for (int i = 0; i < babuk.Length/2; i++)
-            //{
-            //    if (babuk[i].SzinFekete == false && babuk[i].Y==3)
-            //    {
-            //        return false;
-            //    }
-            //}
-            //return true;
+          
         }
         public override bool Equals(object obj)
         {
